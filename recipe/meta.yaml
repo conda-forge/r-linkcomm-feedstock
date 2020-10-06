@@ -1,4 +1,4 @@
-{% set version = "1.0-12" %}
+{% set version = "1.0-13" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/linkcomm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/linkcomm/linkcomm_{{ version }}.tar.gz
-  sha256: 125045db48c8d770ada74e57fd7161e29719dc59c82b8db0c47fcec8f32de210
+  sha256: 63d9aff84da153dd1014663aaf410c9f900bc56441ca521f848fda76babc8788
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -50,8 +50,7 @@ test:
 about:
   home: https://CRAN.R-project.org/package=linkcomm
   license: GPL (>= 2)
-  summary: Link communities reveal the nested and overlapping structure in networks, and uncover the key nodes that form connections to multiple communities. linkcomm
-    provides a set of tools for generating, visualizing, and analysing link communities in networks of arbitrary size and type. The linkcomm package also includes
+  summary: Link communities reveal the nested and overlapping structure in networks, and uncover the key nodes that form connections to multiple communities. linkcomm provides a set of tools for generating, visualizing, and analysing link communities in networks of arbitrary size and type. The linkcomm package also includes
     tools for generating, visualizing, and analysing Overlapping Cluster Generator (OCG) communities.
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
